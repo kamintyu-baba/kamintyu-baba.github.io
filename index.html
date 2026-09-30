@@ -227,7 +227,7 @@
 
     #kam-lp .kam-fv-question {
       max-width: 330px;
-      margin: 58px 0 0;
+      margin: auto 0 0;   /* auto が「あの人のこと」以下を下へ押す（2026-09-30 本人がD2を選択） */
       color: var(--kam-fv-ink);
       font-family: "Shippori Mincho", serif;
       font-size: 30px;
@@ -238,7 +238,7 @@
 
     #kam-lp .kam-fv-title {
       width: auto;
-      margin: 30px 0 0;
+      margin: 30px 0 6.5svh;   /* 🔴 下の余裕。iPhoneのホームバー34pxを引いて67px残す。これ以上下げない */
       color: var(--kam-fv-ink);
       font-family: "Shippori Mincho", serif;
       font-size: clamp(63px, 19.8vw, 86px);
