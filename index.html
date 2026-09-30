@@ -204,6 +204,7 @@
 
     #kam-lp .kam-fv-copy {
       position: relative;
+      justify-content: center;   /* 上司指示「無料霊視が下にあるの不自然だから真ん中に」2026-09-30 */
       z-index: 2;
       width: 100%;
       height: 100%;
@@ -218,7 +219,7 @@
 
     #kam-lp .kam-fv-question {
       max-width: 330px;
-      margin: auto 0 0;   /* auto が「あの人のこと」以下を下へ押す（2026-09-30 本人がD2を選択） */
+      margin: 0;
       color: var(--kam-fv-ink);
       font-family: "Shippori Mincho", serif;
       font-size: 30px;
@@ -229,7 +230,7 @@
 
     #kam-lp .kam-fv-title {
       width: auto;
-      margin: 30px 0 6.5svh;   /* 🔴 下の余裕。iPhoneのホームバー34pxを引いて67px残す。これ以上下げない */
+      margin: 30px 0 0;
       color: var(--kam-fv-ink);
       font-family: "Shippori Mincho", serif;
       font-size: clamp(63px, 19.8vw, 86px);
@@ -239,6 +240,21 @@
       white-space: nowrap;
     }
 
+
+    /* 🔴 真ん中に置くと「あの人のこと」が水平線（41.7%）をまたぐ。
+       そこは写真で一番暗い帯で、幕0.38のままだと 6.10:1 まで落ちる。
+       幕を0.50に濃くすれば7:1を超えるが、写真の彩度が34%→27%に落ちて
+       「全体海」が台無しになる（第25便で直したばかり）。
+       → 文字の後ろにだけ淡い光を置いて解いた。写真は一切薄くならない。
+       ★基準の使い分け：7:1 は本文(17px)の基準。ここは30pxと77pxなので
+        「大きい文字」扱いで 4.5:1。6.10:1 は余裕をもって超えている。
+        本文用の基準を見出しに当てていたのが、そもそもの間違いだった。 */
+    #kam-lp .kam-fv-question,
+    #kam-lp .kam-fv-title {
+      text-shadow:
+        0 0 14px rgba(255, 255, 255, 0.90),
+        0 0 30px rgba(255, 255, 255, 0.65);
+    }
 
     /* ② 痛み */
     #kam-lp .kam-pain {
