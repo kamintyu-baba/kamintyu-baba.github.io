@@ -1,0 +1,1566 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>宮古島のカミンチュ ばぁば｜無料霊視</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Shippori+Mincho:wght@400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* 🔴 2026-09-30 第12便：白地を廃止。⑤だけ色を変えるのをやめ、地そのものを落とした
+         （色を変えるには"読者に見える理由"が要る。⑤の青灰は制作都合で理由が見えなかった） */
+      --kam-bg: #CBDCE2;        /* 98.1 → 85.0 */
+      --kam-bg-sub: #BCD2DA;    /* 95.2 → 80.7 */
+      --kam-bg-shift: #A9C4CE;  /* 90.4 → 74.9 */
+      --kam-ink: #12252B;
+      --kam-ink-sub: #52676D;
+      --kam-cta: #06C755;
+
+      /* 🔴 2026-09-30 第11便：FVに海の写真。地を写真に寄せて #F7FBFC(98.1) → #DCE9ED(90.4) */
+      --kam-fv-bg: #CBDCE2;     /* 主地と同じ。勝った広告が暗い系なら、この1つと文字色を入れ替える */
+      --kam-fv-ink: #12252B;
+
+      --kam-max: 430px;
+      --kam-side: 24px;
+      --kam-rule: #A9C4CE;      /* 主地より暗い線（明るい地に暗い罫線） */
+
+      /* 🔴 2026-09-30 第9便：③の二・三を「場面」にするための夜の地 */
+      --kam-night: #18343E;
+      --kam-night-deep: #0D232B;
+      --kam-night-ink: #F7FBFC;
+    }
+
+    html {
+      margin: 0;
+      padding: 0;
+      background: var(--kam-bg-sub);
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--kam-bg-sub);
+      color: var(--kam-ink);
+    }
+
+    #kam-lp,
+    #kam-lp *,
+    #kam-lp *::before,
+    #kam-lp *::after {
+      box-sizing: border-box;
+    }
+
+    #kam-lp {
+      width: 100%;
+      max-width: var(--kam-max);
+      margin: 0 auto;
+      overflow: hidden;
+      background: var(--kam-bg);
+      color: var(--kam-ink);
+      font-family: "BIZ UDPGothic", sans-serif;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.95;
+      letter-spacing: 0.02em;
+      overflow-wrap: normal;
+      word-break: normal;
+      line-break: strict;
+    }
+
+    #kam-lp h1,
+    #kam-lp h2,
+    #kam-lp h3,
+    #kam-lp p,
+    #kam-lp figure,
+    #kam-lp blockquote {
+      margin: 0;
+      padding: 0;
+    }
+
+    #kam-lp h1,
+    #kam-lp h2,
+    #kam-lp h3 {
+      color: var(--kam-ink);
+      font-family: "Shippori Mincho", serif;
+      font-weight: 400;
+      line-height: 1.55;
+      letter-spacing: 0.035em;
+      text-align: left;
+    }
+
+    #kam-lp img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    #kam-lp a {
+      color: inherit;
+    }
+
+    #kam-lp .kam-section {
+      position: relative;
+      width: 100%;
+      background: var(--kam-bg);
+    }
+
+    #kam-lp .kam-inner {
+      width: 100%;
+      padding-right: var(--kam-side);
+      padding-left: var(--kam-side);
+    }
+
+    #kam-lp .kam-section-title {
+      margin-bottom: 34px;
+      font-size: 27px;
+      line-height: 1.55;
+      letter-spacing: 0.035em;
+    }
+
+    #kam-lp .kam-copy {
+      font-size: 17px;
+      line-height: 1.95;
+      letter-spacing: 0.02em;
+    }
+
+    #kam-lp .kam-copy + .kam-copy {
+      margin-top: 25px;
+    }
+
+
+    /* ① FV — 2026-09-30 第14便：海を全画面にして文字を上に乗せた。
+       理由＝地(彩度10.2%)と海(55.4%)で45.2ポイント差があり、目が海に行って文字が読まれなかった。
+       人の目は「明るい方」でなく「彩度が高い方」に行く。
+       確定した広告5本は全部「写真の上に文字」で、文字の帯だけ彩度を落としている（明度71/彩度22等）。
+       LPだけ上下に分かれていたので、着地で形が変わっていた */
+    #kam-lp .kam-fv {
+      position: relative;
+      width: 100%;
+      height: 100svh;
+      min-height: 100svh;
+      overflow: hidden;
+      background: var(--kam-fv-bg);
+      color: var(--kam-fv-ink);
+    }
+
+    #kam-lp .kam-fv-sea {
+      position: absolute;
+      z-index: 0;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    #kam-lp .kam-fv-sea img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+
+    /* 白→透明。文字領域だけ海の彩度を抑える。
+       🔴 黒→透明にしない（記録：黒だと白砂が汚いグレーの帯になる） */
+    #kam-lp .kam-fv-sea::after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.84) 0%,
+        rgba(255, 255, 255, 0.80) 30%,
+        rgba(255, 255, 255, 0.68) 55%,
+        rgba(255, 255, 255, 0.30) 76%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      pointer-events: none;
+    }
+
+    #kam-lp .kam-fv-copy {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      padding: 54px var(--kam-side) 46px;
+      background: transparent;
+      color: var(--kam-fv-ink);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    #kam-lp .kam-fv-kicker {
+      margin-top: 2svh;
+      margin-bottom: 7svh;
+      color: var(--kam-fv-ink);
+      font-family: "Shippori Mincho", serif;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.7;
+      letter-spacing: 0.08em;
+    }
+
+    #kam-lp .kam-fv-question {
+      max-width: 100%;
+      margin-bottom: 3.2svh;
+      color: var(--kam-fv-ink);
+      font-family: "Shippori Mincho", serif;
+      font-size: 27px;
+      font-weight: 400;
+      line-height: 1.55;
+      letter-spacing: 0.025em;
+    }
+
+    /* 🔴 2026-09-30 修正：font-size を要件H（画面幅の78〜85%）に合わせ、width:82% を削除 */
+    #kam-lp .kam-fv-title {
+      margin-bottom: 3.2svh;
+      color: var(--kam-fv-ink);
+      font-family: "Shippori Mincho", serif;
+      font-size: clamp(63px, 19.8vw, 86px);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    #kam-lp .kam-fv-proof {
+      color: var(--kam-fv-ink);
+      font-family: "BIZ UDPGothic", sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1.7;
+      letter-spacing: 0.055em;
+    }
+
+    /* 🔴 .kam-fv-photo は削除（2026-09-30 顔写真を外した） */
+
+    /* ② 痛み */
+    #kam-lp .kam-pain {
+      padding: 78px 0 88px;
+      background: var(--kam-bg);
+    }
+
+    #kam-lp .kam-pain .kam-inner {
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+
+    #kam-lp .kam-pain-lead {
+      margin-top: 36px;
+    }
+
+    #kam-lp .kam-pain-voice {
+      margin-top: 28px;
+    }
+
+    #kam-lp .kam-pain-turn {
+      margin-top: 62px;
+      font-family: "Shippori Mincho", serif;
+      font-size: 21px;
+      font-weight: 400;
+      line-height: 1.85;
+      letter-spacing: 0.025em;
+    }
+
+    /* ③ ばぁばのこと */
+    #kam-lp .kam-story {
+      padding-top: 82px;
+      background: var(--kam-bg);
+    }
+
+    #kam-lp .kam-story-head {
+      padding-bottom: 60px;
+    }
+
+    #kam-lp .kam-story-role {
+      margin-top: 10px;
+      color: var(--kam-ink-sub);
+      font-size: 14px;
+      line-height: 1.7;
+      letter-spacing: 0.06em;
+    }
+
+    #kam-lp .kam-story-name {
+      margin-top: 4px;
+      font-family: "Shippori Mincho", serif;
+      font-size: 23px;
+      font-weight: 400;
+      line-height: 1.65;
+      letter-spacing: 0.035em;
+    }
+
+    #kam-lp .kam-story-intro {
+      padding-bottom: 70px;
+    }
+
+    /* 🔴 2026-09-30 修正：要件C（同じ明度が2,500px連続しない）。
+       ②の頭〜③一章の終わりで主地が2,880px連続していたため、名乗りの面だけ副地にする */
+    #kam-lp .kam-story-head,
+    #kam-lp .kam-story-intro {
+      background: var(--kam-bg-sub);
+    }
+
+    #kam-lp .kam-story-chapter {
+      padding: 72px var(--kam-side) 76px;
+    }
+
+    #kam-lp .kam-story-chapter-title {
+      margin-bottom: 42px;
+      font-size: 25px;
+      line-height: 1.55;
+      letter-spacing: 0.04em;
+    }
+
+
+
+    #kam-lp .kam-story-mid-image {
+      width: calc(100% + (var(--kam-side) * 2));
+      margin: 48px calc(var(--kam-side) * -1);
+    }
+
+    #kam-lp .kam-story-close {
+      padding: 68px var(--kam-side) 96px;
+    }
+
+    /* ───── 🔴 2026-09-30 第9便：③の二・三を「場面」にする ───── */
+
+    /* ③ 二：夜の砂浜 */
+    #kam-lp .kam-story-night {
+      background: var(--kam-night);
+      color: var(--kam-night-ink);
+    }
+
+    #kam-lp .kam-story-night .kam-story-chapter-title,
+    #kam-lp .kam-story-night .kam-copy {
+      color: var(--kam-night-ink);
+    }
+
+    #kam-lp .kam-story-scene-image {
+      position: relative;
+      width: 100%;
+      height: 70svh;
+      min-height: 500px;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    #kam-lp .kam-story-scene-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    #kam-lp .kam-story-night .kam-story-scene-image::before,
+    #kam-lp .kam-story-night .kam-story-scene-image::after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      width: 100%;
+      height: 72px;
+      pointer-events: none;
+    }
+
+    #kam-lp .kam-story-night .kam-story-scene-image::before {
+      top: 0;
+      background: linear-gradient(to bottom, var(--kam-night), transparent);
+    }
+
+    #kam-lp .kam-story-night .kam-story-scene-image::after {
+      bottom: 0;
+      background: linear-gradient(to top, var(--kam-night), transparent);
+    }
+
+    /* ③ 三：港の居酒屋 */
+    #kam-lp .kam-story-deep {
+      background: var(--kam-night-deep);
+      color: var(--kam-night-ink);
+    }
+
+    #kam-lp .kam-story-deep .kam-story-chapter-title,
+    #kam-lp .kam-story-deep .kam-copy {
+      color: var(--kam-night-ink);
+    }
+
+    #kam-lp .kam-story-deep .kam-story-mid-image {
+      position: relative;
+      width: calc(100% + (var(--kam-side) * 2));
+      height: 60svh;
+      min-height: 440px;
+      margin: 52px calc(var(--kam-side) * -1);
+      overflow: hidden;
+    }
+
+    #kam-lp .kam-story-deep .kam-story-mid-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    #kam-lp .kam-story-deep .kam-story-mid-image::before,
+    #kam-lp .kam-story-deep .kam-story-mid-image::after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      width: 100%;
+      height: 68px;
+      pointer-events: none;
+    }
+
+    #kam-lp .kam-story-deep .kam-story-mid-image::before {
+      top: 0;
+      background: linear-gradient(to bottom, var(--kam-night-deep), transparent);
+    }
+
+    #kam-lp .kam-story-deep .kam-story-mid-image::after {
+      bottom: 0;
+      background: linear-gradient(to top, var(--kam-night-deep), transparent);
+    }
+
+    /* ③ 締め：御嶽から明るい現在へ戻る */
+    #kam-lp .kam-story-return-image {
+      position: relative;
+      width: 100%;
+      height: 66svh;
+      min-height: 470px;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    #kam-lp .kam-story-return-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    #kam-lp .kam-story-return-image::after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100px;
+      background: linear-gradient(to top, var(--kam-bg), transparent);
+      pointer-events: none;
+    }
+
+    #kam-lp .kam-story-close {
+      background: var(--kam-bg);
+    }
+
+    /* ───── ここまで第9便 ───── */
+
+    #kam-lp .kam-story-core {
+      margin-top: 72px;
+      font-family: "Shippori Mincho", serif;
+      font-size: 21px;
+      font-weight: 400;
+      line-height: 1.95;
+      letter-spacing: 0.025em;
+    }
+
+    /* ④ 無料霊視 */
+    #kam-lp .kam-reading {
+      padding-top: 84px;
+      background: var(--kam-bg);
+    }
+
+    #kam-lp .kam-reading-main {
+      padding-bottom: 70px;
+    }
+
+    #kam-lp .kam-reading-limit {
+      padding: 58px var(--kam-side) 72px;
+      background: var(--kam-bg-sub);
+    }
+
+    /* ⑤ 声 — 第12便で専用背景を廃止。主地(85.0)がスクショ(95.3)を浮かせるので特別扱い不要 */
+    #kam-lp .kam-voices,
+    #kam-lp .kam-voices-lead,
+    #kam-lp .kam-voice-list,
+    #kam-lp .kam-voice-item,
+    #kam-lp .kam-voice-text,
+    #kam-lp .kam-voice-note {
+      background: var(--kam-bg);
+    }
+
+    #kam-lp .kam-voices {
+      padding-top: 84px;
+    }
+
+    #kam-lp .kam-voices-lead {
+      padding-bottom: 52px;
+    }
+
+    /* 🔴 2026-09-30 第13便：縦積み → 横スワイプに戻した。
+       こちらが「横スワイプにするな」と書いたのが誤り。別案件は横スワイプで転換率6.5%を出している。
+       実績のある形を理屈で覆していた。カード幅88%で次が覗く＝「6人いる」も伝わる */
+    #kam-lp .kam-voice-list {
+      display: flex;
+      width: 100%;
+      gap: 16px;
+      padding: 0 0 8px var(--kam-side);
+      overflow-x: auto;
+      overflow-y: hidden;
+      overscroll-behavior-x: contain;   /* スワイプがページ全体に伝わるのを止める */
+      scroll-snap-type: x mandatory;
+      /* 🔴 scroll-snap は padding-left を食う（カードの左端を領域の左端に合わせるため、
+         paddingぶん勝手にスクロールして余白が消える）。scroll-padding-left でスナップ位置をずらす */
+      scroll-padding-left: var(--kam-side);
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    #kam-lp .kam-voice-list::-webkit-scrollbar {
+      display: none;
+    }
+
+    #kam-lp .kam-voice-item {
+      flex: 0 0 88%;
+      width: 88%;
+      min-width: 0;
+      margin: 0;
+      scroll-snap-align: start;
+      scroll-snap-stop: normal;
+    }
+
+    #kam-lp .kam-voice-item:last-child {
+      margin-right: var(--kam-side);
+    }
+
+    #kam-lp .kam-voice-item img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    #kam-lp .kam-voice-text {
+      padding: 0 0 14px;
+    }
+
+    #kam-lp .kam-voice-label {
+      min-height: 48px;          /* 6枚で画像の上端を揃える（ガタつき防止） */
+      color: var(--kam-ink-sub);
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1.7;
+      letter-spacing: 0.02em;
+    }
+
+    #kam-lp .kam-voice-quote {
+      min-height: 64px;          /* 同上 */
+      margin-top: 7px;
+      color: var(--kam-ink);
+      font-family: "BIZ UDPGothic", sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.75;
+      letter-spacing: 0.015em;
+    }
+
+    #kam-lp .kam-voice-note {
+      padding: 30px var(--kam-side) 0;
+      color: var(--kam-ink-sub);
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1.85;
+      letter-spacing: 0.015em;
+    }
+
+    /* CTA 共通 */
+    #kam-lp .kam-cta-wrap {
+      width: 100%;
+      background: var(--kam-bg);
+    }
+
+    #kam-lp .kam-cta-link {
+      display: block;
+      width: 100%;
+      border: 0;
+      border-radius: 0;
+      background: var(--kam-cta);
+      color: var(--kam-ink);
+      font-family: "BIZ UDPGothic", sans-serif;
+      font-weight: 400;
+      line-height: 1.45;
+      letter-spacing: 0.02em;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    #kam-lp .kam-cta-first {
+      padding: 52px var(--kam-side) 88px;
+    }
+
+    #kam-lp .kam-cta-first .kam-cta-link {
+      padding: 17px 12px;
+      font-size: 17px;
+    }
+
+    /* ⑥ 受け取ったあと */
+    #kam-lp .kam-after {
+      background: var(--kam-bg);
+    }
+
+    #kam-lp .kam-after-head {
+      padding: 84px var(--kam-side) 48px;
+      background: var(--kam-bg);
+    }
+
+    #kam-lp .kam-after-part {
+      padding: 50px var(--kam-side) 58px;
+    }
+
+    /* 🔴 2026-09-30 修正：nth-of-type はタグで数えるため .kam-after-head で番号がズレる。明示クラスに変更 */
+    #kam-lp .kam-after-part--a {
+      background: var(--kam-bg);
+    }
+
+    #kam-lp .kam-after-part--b {
+      background: var(--kam-bg-sub);
+    }
+
+    #kam-lp .kam-after-part--c {
+      padding-bottom: 112px;
+      background: var(--kam-bg);
+    }
+
+
+
+
+
+    /* ⑧ 最終CTA */
+    #kam-lp .kam-final {
+      padding: 104px 0 82px;
+      background: var(--kam-bg);
+      border-top: 1px solid var(--kam-rule);
+    }
+
+    #kam-lp .kam-final-copy {
+      margin-top: 34px;
+    }
+
+    #kam-lp .kam-final-cta {
+      margin-top: 52px;
+    }
+
+    #kam-lp .kam-final-cta .kam-cta-link {
+      padding: 21px 12px;
+      font-size: 19px;
+    }
+
+    /* フッター */
+    #kam-lp .kam-footer {
+      padding: 36px var(--kam-side) 40px;
+      border-top: 1px solid var(--kam-rule);
+      background: var(--kam-bg-sub);
+      color: var(--kam-ink-sub);
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1.85;
+      letter-spacing: 0.01em;
+    }
+
+    #kam-lp .kam-footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 8px;
+      align-items: baseline;
+    }
+
+    #kam-lp .kam-footer a {
+      color: var(--kam-ink-sub);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    #kam-lp .kam-footer-copy {
+      margin-top: 14px;
+    }
+
+    /* ═══════════ 2026-09-30 第16便 ═══════════
+       診断で採用した3つ：見出しの階層／⑦の構造／④の汎用性＋⑧フッターの終端
+       🥇 採用した言葉＝「統一されているが、均一ではない」。
+          全部27px・全部85.0に揃えたのは"統一"ではなく"均一"だった */
+
+    /* ── 見出しの階層（太字も色も使わず、大きさ・行間・字間だけで作る） ── */
+
+    /* ④：説明ではなく、物語から役割へ切り替わる章 */
+    #kam-lp .kam-reading .kam-section-title {
+      max-width: 330px;
+      margin-bottom: 38px;
+      font-size: 31px;
+      line-height: 1.48;
+      letter-spacing: 0.025em;
+    }
+
+    /* ⑥：変化を静かに読む章 */
+    #kam-lp .kam-after .kam-section-title {
+      max-width: 310px;
+      margin-bottom: 0;
+      font-size: 25px;
+      line-height: 1.58;
+      letter-spacing: 0.03em;
+    }
+
+
+    /* ⑧：大声ではなく、最後の招待 */
+    #kam-lp .kam-final .kam-section-title {
+      max-width: 320px;
+      margin-bottom: 0;
+      font-size: 30px;
+      line-height: 1.52;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── ④ 「3つ」を同じリズムで見せる ── */
+    #kam-lp .kam-reading {
+      padding-top: 76px;
+    }
+
+    #kam-lp .kam-reading-main {
+      padding-bottom: 54px;
+    }
+
+    #kam-lp .kam-reading-points {
+      margin-top: 4px;
+    }
+
+    #kam-lp .kam-reading-point {
+      padding: 22px 0 24px;
+      border-top: 1px solid var(--kam-rule);
+    }
+
+    #kam-lp .kam-reading-point:last-child {
+      border-bottom: 1px solid var(--kam-rule);
+    }
+
+    #kam-lp .kam-reading-limit {
+      padding: 48px var(--kam-side) 56px;
+      background: var(--kam-bg-sub);
+    }
+
+    #kam-lp .kam-reading-limit .kam-copy + .kam-copy {
+      margin-top: 30px;
+    }
+
+    /* ── ⑥→⑦ 境界に最大の間を作り、⑦の内部は静かにする ── */
+    #kam-lp .kam-after-part--c {
+      padding-bottom: 132px;
+    }
+
+
+
+
+
+
+
+
+    /* ── ⑧ 「見出し→説明→ボタン」から一続きの終章へ ── */
+    #kam-lp .kam-final {
+      padding: 92px 0 72px;
+      background: var(--kam-bg);
+      border-top: 1px solid var(--kam-rule);
+    }
+
+    #kam-lp .kam-final-copy {
+      margin-top: 42px;
+      padding-top: 34px;
+      border-top: 1px solid var(--kam-rule);
+    }
+
+    #kam-lp .kam-final-copy .kam-copy + .kam-copy {
+      margin-top: 30px;
+    }
+
+    #kam-lp .kam-final-cta {
+      margin-top: 46px;
+    }
+
+    #kam-lp .kam-final-cta .kam-cta-link {
+      padding: 21px 12px;
+      font-size: 19px;
+    }
+
+    /* ── フッター CTA直後に別部品が始まる感じを弱める ── */
+    #kam-lp .kam-footer {
+      padding: 30px var(--kam-side) 34px;
+      border-top: 0;
+      background: var(--kam-bg);
+      color: var(--kam-ink-sub);
+    }
+
+    #kam-lp .kam-footer-links {
+      padding-top: 24px;
+      border-top: 1px solid var(--kam-rule);
+    }
+
+    /* ═══════════ ここまで第16便 ═══════════ */
+
+    /* ═══ ⑦ 2026-09-30 第21便：罫線を使わず「面」で3つに割った ═══
+       🥇 私は2回「罫線が地と同色で消える」を踏んだが、Astraは罫線を使わずに解いた。
+       視線の1位＝.kam-truth-key（24px明朝）／2位＝最後の段落（21px明朝）
+       reason の面だけ 74.9 → 80.7 に上げて、理由の部分を浮かせている */
+    #kam-lp .kam-truth {
+      padding: 0;
+      border: 0;
+      background: var(--kam-bg-shift);
+      color: var(--kam-ink);
+    }
+
+    #kam-lp .kam-truth-head {
+      padding: 64px var(--kam-side) 44px;
+      background: var(--kam-bg-shift);
+    }
+
+    #kam-lp .kam-truth .kam-section-title {
+      max-width: 326px;
+      margin: 0;
+      color: var(--kam-ink);
+      font-family: "Shippori Mincho", serif;
+      font-size: 33px;
+      font-weight: 400;
+      line-height: 1.5;
+      letter-spacing: 0.015em;
+      text-align: left;
+    }
+
+    #kam-lp .kam-truth-opening {
+      padding: 0 var(--kam-side) 48px;
+      background: var(--kam-bg-shift);
+    }
+
+    #kam-lp .kam-truth-opening .kam-copy {
+      margin: 0;
+    }
+
+    #kam-lp .kam-truth-opening .kam-copy + .kam-copy {
+      margin-top: 26px;
+    }
+
+    #kam-lp .kam-truth-key {
+      max-width: 310px;
+      margin: 38px 0 0;
+      color: var(--kam-ink);
+      font-family: "Shippori Mincho", serif;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1.75;
+      letter-spacing: 0.01em;
+      text-align: left;
+    }
+
+    #kam-lp .kam-truth-reason {
+      padding: 44px var(--kam-side) 46px;
+      background: var(--kam-bg-sub);
+    }
+
+    #kam-lp .kam-truth-reason .kam-copy {
+      margin: 0;
+      color: var(--kam-ink);
+    }
+
+    #kam-lp .kam-truth-reason .kam-copy + .kam-copy {
+      margin-top: 24px;
+    }
+
+    #kam-lp .kam-truth-return {
+      padding: 46px var(--kam-side) 70px;
+      background: var(--kam-bg-shift);
+    }
+
+    #kam-lp .kam-truth-return .kam-copy {
+      margin: 0;
+      color: var(--kam-ink);
+    }
+
+    #kam-lp .kam-truth-return .kam-copy + .kam-copy {
+      margin-top: 25px;
+    }
+
+    #kam-lp .kam-truth-return .kam-copy:last-child {
+      max-width: 310px;
+      margin-top: 38px;
+      font-family: "Shippori Mincho", serif;
+      font-size: 21px;
+      font-weight: 400;
+      line-height: 1.85;
+      letter-spacing: 0.015em;
+      text-align: left;
+    }
+
+    @media (max-width: 370px) {
+      #kam-lp {
+        font-size: 17px;
+      }
+
+      #kam-lp .kam-inner,
+      #kam-lp .kam-story-chapter,
+      #kam-lp .kam-story-close,
+      #kam-lp .kam-reading-limit,
+      #kam-lp .kam-after-head,
+      #kam-lp .kam-after-part,
+      #kam-lp .kam-footer {
+        padding-right: 20px;
+        padding-left: 20px;
+      }
+
+      #kam-lp .kam-pain .kam-inner {
+        padding-right: 24px;
+        padding-left: 24px;
+      }
+
+      #kam-lp .kam-fv-copy {
+        padding-right: 20px;
+        padding-left: 20px;
+      }
+
+      #kam-lp .kam-fv-question {
+        font-size: 25px;
+      }
+
+      #kam-lp .kam-voice-text,
+      #kam-lp .kam-voice-note,
+      #kam-lp .kam-cta-first {
+        padding-right: 20px;
+        padding-left: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main id="kam-lp">
+
+    <section class="kam-section kam-fv">
+      <div class="kam-fv-copy">
+        <p class="kam-fv-kicker">宮古島の御嶽より</p>
+
+        <h1 class="kam-fv-question">あの人のこと、<br>まだ諦めきれませんか</h1>
+
+        <p class="kam-fv-title">無料霊視</p>
+
+        <p class="kam-fv-proof">鑑定20,000件以上 ／ 四十年</p>
+      </div>
+
+      <figure class="kam-fv-sea">
+        <img src="img/s_fv_sea.jpg" alt="宮古島の海">
+      </figure>
+    </section>
+
+    <section class="kam-section kam-pain">
+      <div class="kam-inner">
+
+        <h2 class="kam-section-title">こういう子が ようけおるさぁ</h2>
+
+        <div class="kam-pain-lead">
+          <p class="kam-copy">
+            ばぁばのとこに来る子はね、<br>
+            みんな最初に、こう言うさぁ。
+          </p>
+
+          <p class="kam-copy">
+            「こんなこと、誰にも言えなくて」
+          </p>
+        </div>
+
+        <div class="kam-pain-voice">
+          <p class="kam-copy">
+            好きな人がおる。<br>
+            でも、その気持ちを誰にも話せん。
+          </p>
+
+          <p class="kam-copy">
+            まわりに言うたら、きっと叱られる。<br>
+            「やめなさい」て言われるのが<br>
+            分かっとる。
+          </p>
+
+          <p class="kam-copy">
+            せやから、ひとりで抱えたまま<br>
+            何年も過ごしてきた子が、<br>
+            ようけおるさぁ。
+          </p>
+
+          <p class="kam-copy">
+            連絡が来た日は、一日じゅう明るい。<br>
+            来ん日は、何度も画面を見てしまう。
+          </p>
+
+          <p class="kam-copy">
+            分かっとるよ。<br>
+            自分でも、分かっとるさぁ。
+          </p>
+
+          <p class="kam-copy">
+            分かっとるのに、離れられん。
+          </p>
+
+          <p class="kam-copy">
+            ばぁばはね、<br>
+            その気持ちを、間違いやとは言わんよ。
+          </p>
+        </div>
+
+        <p class="kam-pain-turn">——ばぁばもね、そうやった。</p>
+
+      </div>
+    </section>
+
+    <section class="kam-section kam-story">
+
+      <div class="kam-story-head kam-inner">
+        <h2 class="kam-section-title">ばぁばのこと</h2>
+        <p class="kam-story-role">宮古島のユタ</p>
+        <p class="kam-story-name">カミンチュ ばぁば</p>
+      </div>
+
+      <div class="kam-story-intro kam-inner">
+        <p class="kam-copy">
+          はじめまして。<br>
+          宮古島のカミンチュ ばぁば、です。
+        </p>
+
+        <p class="kam-copy">
+          ばぁばはね、<br>
+          選ばれた特別な人間やなかったよ。
+        </p>
+
+        <p class="kam-copy">
+          ばぁばの話を、<br>
+          三つだけ聞いてくれるかね。
+        </p>
+      </div>
+
+
+      <div class="kam-story-chapter">
+        <h3 class="kam-story-chapter-title">一｜言えんかった、十年</h3>
+
+        <p class="kam-copy">
+          若い頃、ひとりの人を十年想うとった。
+        </p>
+
+        <p class="kam-copy">
+          言えんかった。
+        </p>
+
+        <p class="kam-copy">
+          言うてしもうたら、<br>
+          いまの距離まで壊れる気がしてね。<br>
+          年に一度届くかどうかの短い返事を<br>
+          何度も読み返して
+        </p>
+
+        <p class="kam-copy">
+          「まだ繋がっとる」と<br>
+          自分に言い聞かせとった。
+        </p>
+
+        <p class="kam-copy">
+          誰にも話せんかったさぁ。
+        </p>
+
+        <p class="kam-copy">
+          言うたら笑われる。<br>
+          「いい歳して」<br>
+          「もう忘れなさい」て言われる。<br>
+          分かっとったから、黙っとった。
+        </p>
+
+        <p class="kam-copy">
+          十年、ひとりで抱えとったよ。
+        </p>
+      </div>
+
+
+      <div class="kam-story-night">
+        <div class="kam-story-chapter">
+          <h3 class="kam-story-chapter-title">二｜伝えた日に、消えた</h3>
+        </div>
+
+        <figure class="kam-story-scene-image">
+          <img
+            src="img/s_beach_night.jpg"
+            alt="夜の砂浜と星空"
+            loading="lazy">
+        </figure>
+
+        <div class="kam-story-chapter">
+          <p class="kam-copy">
+            ある日、とうとう伝えたの。<br>
+            もう隠しきれんかったから。
+          </p>
+
+          <p class="kam-copy">
+            そしたら、その日を境に<br>
+            連絡は来んくなった。
+          </p>
+
+          <p class="kam-copy">
+            十年分が、<br>
+            一瞬で「なかったこと」になってね。
+          </p>
+
+          <p class="kam-copy">
+            あの夜、<br>
+            裸足で砂浜まで歩いていって<br>
+            波打ち際にしゃがみ込んで<br>
+            声も出さずに泣いたよ。
+          </p>
+
+          <p class="kam-copy">
+            星がきれいだったのだけ覚えとる。<br>
+            あんなに泣いとるのに、<br>
+            空だけは何事もないように美しくて<br>
+            それがまた、残酷でね。
+          </p>
+        </div>
+      </div>
+
+
+      <div class="kam-story-deep">
+        <div class="kam-story-chapter">
+          <h3 class="kam-story-chapter-title">三｜笑っとるのに、<br>笑ってない</h3>
+
+          <p class="kam-copy">
+            変わったのは、<br>
+            それからしばらくしてさぁ。
+          </p>
+
+          <p class="kam-copy">
+            港の近くの、五席しかない居酒屋。<br>
+            隣に座った若い子が、<br>
+            店主と楽しそうに話しとった。
+          </p>
+
+          <p class="kam-copy">
+            でもね、おかしいんだよ。
+          </p>
+
+          <p class="kam-copy">
+            その子、笑っとるのに——笑ってない。
+          </p>
+
+          <figure class="kam-story-mid-image">
+            <img
+              src="img/s_izakaya.jpg"
+              alt="港の小さな居酒屋の灯り"
+              loading="lazy">
+          </figure>
+
+          <p class="kam-copy">
+            その顔をね、<br>
+            ばぁばは知っとった。
+          </p>
+
+          <p class="kam-copy">
+            十年のあいだ、<br>
+            毎朝、鏡で見とった顔だったから。
+          </p>
+
+          <p class="kam-copy">
+            気づいたら、口が勝手に動いとった。
+          </p>
+
+          <p class="kam-copy">
+            「……あんた、<br>
+            本当は泣きたいんじゃないかい？」
+          </p>
+
+          <p class="kam-copy">
+            その子の笑顔が、一瞬で崩れてね。<br>
+            ぽろぽろ涙をこぼしながら、<br>
+            こう言うたよ。
+          </p>
+
+          <p class="kam-copy">
+            「……なんで、分かるんですか」
+          </p>
+
+          <p class="kam-copy">
+            ばぁばにも、分からんかったよ。
+          </p>
+        </div>
+      </div>
+
+
+      <figure class="kam-story-return-image">
+        <img
+          src="img/s_utaki.jpg"
+          alt="御嶽の苔むした石段と木漏れ日"
+          loading="lazy">
+      </figure>
+
+      <div class="kam-story-close">
+        <p class="kam-copy">
+          島の人らが、いつからか<br>
+          ばぁばのことを<br>
+          "カミンチュ" と呼ぶようになった。
+        </p>
+
+        <p class="kam-copy">
+          あれから、四十年以上。
+        </p>
+
+        <p class="kam-copy">
+          たくさんの子の話を、<br>
+          聞かせてもろうてきた。
+        </p>
+
+        <p class="kam-story-core">
+          ばぁばはね、<br>
+          誰にも言えん気持ちを<br>
+          十年抱えとったから、
+        </p>
+
+        <p class="kam-story-core">
+          それを抱えとる子の痛みが、<br>
+          視えるんだと思っとるよ。
+        </p>
+      </div>
+
+    </section>
+
+    <section class="kam-section kam-reading">
+      <div class="kam-reading-main kam-inner">
+        <h2 class="kam-section-title">無料の霊視で 視るのはこの3つさぁ</h2>
+
+        <div class="kam-reading-points">
+          <div class="kam-reading-point">
+            <p class="kam-copy">
+              いま、何が起きとるか。<br>
+              表に見えとることと、<br>
+              その下で動いとること。
+            </p>
+          </div>
+
+          <div class="kam-reading-point">
+            <p class="kam-copy">
+              お相手との間に流れとるもんが、<br>
+              近づいてきとるのか、<br>
+              遠のいていきよるのか。
+            </p>
+          </div>
+
+          <div class="kam-reading-point">
+            <p class="kam-copy">
+              そして——いまは待つ時期なんか、<br>
+              動く時期なんか。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="kam-reading-limit">
+        <p class="kam-copy">
+          先のことはね、<br>
+          ばぁばにも分からんさぁ。<br>
+          でも、いま何が起きとるかは視えるよ。
+        </p>
+
+        <p class="kam-copy">
+          視えたもんを、そのまま渡すだけ。
+        </p>
+      </div>
+    </section>
+
+
+    <section class="kam-section kam-voices">
+      <div class="kam-voices-lead kam-inner">
+        <h2 class="kam-section-title">受け取った子から、届いた言葉</h2>
+
+        <p class="kam-copy">
+          みんなね、<br>
+          最初に同じことを言うさぁ。
+        </p>
+
+        <p class="kam-copy">
+          「なんで、分かるんですか」って。
+        </p>
+      </div>
+
+      <div class="kam-voice-list">
+
+        <div class="kam-voice-item">
+          <div class="kam-voice-text">
+            <p class="kam-voice-label">誰にも言えない人を好きになってしまいました</p>
+            <p class="kam-voice-quote">ずっと欲しかった言葉だったんだって気づきました</p>
+          </div>
+          <img
+            src="img/koe1.jpg"
+            alt="無料霊視を受け取った方から届いた声"
+            loading="lazy">
+        </div>
+
+        <div class="kam-voice-item">
+          <div class="kam-voice-text">
+            <p class="kam-voice-label">5年間ずっと好きな人がいて</p>
+            <p class="kam-voice-quote">誘われるの待ってたって言われました</p>
+          </div>
+          <img
+            src="img/koe3.jpg"
+            alt="無料霊視を受け取った方から届いた声"
+            loading="lazy">
+        </div>
+
+        <div class="kam-voice-item">
+          <div class="kam-voice-text">
+            <p class="kam-voice-label">嬉しいはずなのになぜか怖くて返事できなくて</p>
+            <p class="kam-voice-quote">過去に裏切られた経験がまだ残ってますねって</p>
+          </div>
+          <img
+            src="img/koe4.jpg"
+            alt="無料霊視を受け取った方から届いた声"
+            loading="lazy">
+        </div>
+
+        <div class="kam-voice-item">
+          <div class="kam-voice-text">
+            <p class="kam-voice-label">毎晩一人で泣いてました</p>
+            <p class="kam-voice-quote">行き場のない愛がありますねって</p>
+          </div>
+          <img
+            src="img/koe2.jpg"
+            alt="無料霊視を受け取った方から届いた声"
+            loading="lazy">
+        </div>
+
+        <div class="kam-voice-item">
+          <div class="kam-voice-text">
+            <p class="kam-voice-label">もう3年です。終わらせなきゃってわかってるんです</p>
+            <p class="kam-voice-quote">あの一言がなかったら<br>私はまだあの沼にいた</p>
+          </div>
+          <img
+            src="img/koe5.jpg"
+            alt="無料霊視を受け取った方から届いた声"
+            loading="lazy">
+        </div>
+
+        <div class="kam-voice-item">
+          <div class="kam-voice-text">
+            <p class="kam-voice-label">自分から振ったのにずっと後悔してて</p>
+            <p class="kam-voice-quote">思い切って連絡したら、<br>俺もずっと気になってたって</p>
+          </div>
+          <img
+            src="img/koe6.jpg"
+            alt="無料霊視を受け取った方から届いた声"
+            loading="lazy">
+        </div>
+
+      </div>
+
+      <div class="kam-voice-note">
+        <p>※LINEでいただいたお声です。</p>
+        <p>※実際に無料霊視を受け取った方に、<br>
+          掲載してよいかお尋ねし、<br>
+          お許しをいただいたものです。</p>
+      </div>
+    </section>
+
+
+    <div class="kam-cta-wrap kam-cta-first">
+      <a
+        class="kam-cta-link"
+        href="https://lin.ee/tic0RAn"
+        data-kam-cta="first">ばぁばの無料霊視を受け取る</a>
+    </div>
+
+
+    <section class="kam-section kam-after">
+      <div class="kam-after-head">
+        <h2 class="kam-section-title">視てもろうた子が 言うてくれること</h2>
+      </div>
+
+      <div class="kam-after-part kam-after-part--a">
+        <p class="kam-copy">
+          ずっと誰にも言えんかったことを、<br>
+          やっと口に出せた、と。
+        </p>
+
+        <p class="kam-copy">
+          抱えとったもんに名前がつくとね、<br>
+          それだけで軽うなる子が多いよ。
+        </p>
+      </div>
+
+      <div class="kam-after-part kam-after-part--b">
+        <p class="kam-copy">
+          待つんか、離れるんか、<br>
+          自分で決められた、と。
+        </p>
+
+        <p class="kam-copy">
+          迷いが消えるわけやないさぁ。<br>
+          でも、どっちに流れが向いとるか<br>
+          視えたら、<br>
+          自分で選べるようになるよ。
+        </p>
+      </div>
+
+      <div class="kam-after-part kam-after-part--c">
+        <p class="kam-copy">
+          そして——自分のことを、<br>
+          やっと許せた、と。
+        </p>
+
+        <p class="kam-copy">
+          好きでおったことも、<br>
+          待ってしもうた時間も、<br>
+          まちがいやなかったと思えた時から、<br>
+          人の巡りは静かに変わっていくさぁ。
+        </p>
+      </div>
+    </section>
+
+
+    <section class="kam-section kam-truth">
+
+      <div class="kam-truth-head">
+        <h2 class="kam-section-title">
+          黙っとったら<br>
+          あとで嫌な思い<br>
+          させるからね
+        </h2>
+      </div>
+
+      <div class="kam-truth-opening">
+        <p class="kam-copy">
+          ひとつだけ、先に言うておくさぁ。
+        </p>
+
+        <p class="kam-copy">
+          当たる当たらんの話やないさぁ。
+        </p>
+
+        <p class="kam-truth-key">
+          ばぁばはね、<br>
+          いいことばかり言わんよ。
+        </p>
+      </div>
+
+      <div class="kam-truth-reason">
+        <p class="kam-copy">
+          「その人とはうまくいくさぁ」<br>
+          そう言うてあげられたら、<br>
+          ばぁばも楽さぁ。
+        </p>
+
+        <p class="kam-copy">
+          でも、視えんもんは視えん。<br>
+          視えたもんを、<br>
+          違うふうには言えん。
+        </p>
+
+        <p class="kam-copy">
+          離れたほうがええ流れが視えとったら、<br>
+          ばぁばはそう言うよ。
+        </p>
+
+        <p class="kam-copy">
+          聞きたない話かもしれんね。
+        </p>
+
+        <p class="kam-copy">
+          それでも、黙って期待させといて、<br>
+          あとで裏切るほうが、<br>
+          ばぁばは嫌さぁ。
+        </p>
+      </div>
+
+      <div class="kam-truth-return">
+        <p class="kam-copy">
+          ばぁばが正直に言うのは、<br>
+          お相手との流れのことだけさぁ。
+        </p>
+
+        <p class="kam-copy">
+          四十年、<br>
+          いろんな話を聞いてきたからね。<br>
+          今さら驚くようなことは、もう無いよ。
+        </p>
+
+        <p class="kam-copy">
+          その気持ちが、ちゃんと届くように。<br>
+          ばぁばは、そこを視るさぁ。
+        </p>
+      </div>
+
+    </section>
+
+
+    <section class="kam-section kam-final">
+      <div class="kam-inner">
+        <h2 class="kam-section-title">
+          宮古島の御嶽から、<br>
+          無料で視させて<br>
+          もらうさぁ
+        </h2>
+
+        <div class="kam-final-copy">
+          <p class="kam-copy">
+            ばぁばが視られるのは、<br>
+            1日10人までさぁ。
+          </p>
+
+          <p class="kam-copy">
+            お一人ずつ、ちゃんと視るからね。<br>
+            その日の分が埋まったら、<br>
+            翌日以降のお届けになるよ。
+          </p>
+        </div>
+
+        <div class="kam-final-cta">
+          <a
+            class="kam-cta-link"
+            href="https://lin.ee/tic0RAn"
+            data-kam-cta="final">ばぁばの無料霊視を受け取る</a>
+        </div>
+      </div>
+    </section>
+
+
+    <footer class="kam-footer">
+      <div class="kam-footer-links">
+        <a href="#">特定商取引法に基づく表記</a>
+        <span>｜</span>
+        <a href="#">プライバシーポリシー</a>
+      </div>
+
+      <p class="kam-footer-copy">© 宮古島のカミンチュ ばぁば</p>
+    </footer>
+
+  </main>
+
+  <script>
+    document.querySelectorAll('#kam-lp [data-kam-cta]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'kam_cta_click',
+          kam_cta_position: this.getAttribute('data-kam-cta')
+        });
+      });
+    });
+  </script>
+</body>
+</html>
