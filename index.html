@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Shippori+Mincho:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Shippori+Mincho:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -19,10 +19,11 @@
       --kam-bg-shift: #A9C4CE;  /* 90.4 → 74.9 */
       --kam-ink: #12252B;
       --kam-ink-sub: #52676D;
-      --kam-cta: #06C755;
+      --kam-cta: #0A4C5C;        /* ボタンの地。LINE緑#06C755は地から1.60:1しか浮かず却下（2026-09-30） */
+      --kam-cta-ink: #F7FBFC;    /* ボタンの文字。地とのコントラスト9.54:1 */
 
       /* 🔴 2026-09-30 第11便：FVに海の写真。地を写真に寄せて #F7FBFC(98.1) → #DCE9ED(90.4) */
-      --kam-fv-bg: #CBDCE2;     /* 主地と同じ。勝った広告が暗い系なら、この1つと文字色を入れ替える */
+      --kam-fv-bg: #CBDCE2;      /* 主地と同じ。暗い広告が勝ったらこの1つと文字色を入れ替える */
       --kam-fv-ink: #12252B;
 
       --kam-max: 430px;
@@ -139,11 +140,21 @@
     }
 
 
-    /* ① FV — 2026-09-30 第14便：海を全画面にして文字を上に乗せた。
-       理由＝地(彩度10.2%)と海(55.4%)で45.2ポイント差があり、目が海に行って文字が読まれなかった。
-       人の目は「明るい方」でなく「彩度が高い方」に行く。
-       確定した広告5本は全部「写真の上に文字」で、文字の帯だけ彩度を落としている（明度71/彩度22等）。
-       LPだけ上下に分かれていたので、着地で形が変わっていた */
+
+
+
+
+
+
+
+
+
+    /* 🔴 .kam-fv-photo は削除（2026-09-30 顔写真を外した） */
+
+    /* ① FV — 2026-09-30 第22便：実機で本人が判定して作り直し
+       「余白がデカすぎる／下半分が海なだけ／文字が細い／宮古島のやつが小さい／実績をもっと目立たせる」
+       🔴 こちらが置いていた縛り（weight400のみ・色で差をつけない・枠を使わない・実績は小さく）を全部外した。
+          weight400は手組み試作が満たしていた値を要件に格上げしただけで、根拠が無かった */
     #kam-lp .kam-fv {
       position: relative;
       width: 100%;
@@ -165,27 +176,29 @@
     }
 
     #kam-lp .kam-fv-sea img {
+      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center center;
     }
 
-    /* 白→透明。文字領域だけ海の彩度を抑える。
-       🔴 黒→透明にしない（記録：黒だと白砂が汚いグレーの帯になる） */
+    /* 🔴 2026-09-30 第25便：グラデをやめて「均一な幕」にした。
+       本人「こうじゃなくて、全体海で、その上に文字載せてる感じにして」
+       ★問題は幕があることではなく、幕がグラデ（上0.88→下0.00）だったこと。
+        上が白く塗り潰されて「白い板」になり、41.7%に板と写真の境目ができていた。
+        均一なら板も境目も生まれない。写真が一枚のまま残る。
+       実測  グラデ版 彩度12%  →  均一0.38 彩度34%
+       🔴 濃さ0.38の根拠：タイル(12px)単位の最悪値で7:1を満たす一番薄い値。
+          0.30は帯の平均だと7.16:1で通るが、雲の切れ間のタイルで6.80:1まで落ちる。
+          ★帯の平均で測ると局所的な不合格を見逃す。
+       🔴 白→透明のグラデに戻さないこと。暗幕も試したが本人「fv暗すぎる」で却下（同日） */
     #kam-lp .kam-fv-sea::after {
       content: "";
       position: absolute;
       z-index: 1;
       inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 0.84) 0%,
-        rgba(255, 255, 255, 0.80) 30%,
-        rgba(255, 255, 255, 0.68) 55%,
-        rgba(255, 255, 255, 0.30) 76%,
-        rgba(255, 255, 255, 0) 100%
-      );
+      background: rgba(255, 255, 255, 0.38);
       pointer-events: none;
     }
 
@@ -194,59 +207,47 @@
       z-index: 2;
       width: 100%;
       height: 100%;
-      min-height: 0;
-      padding: 54px var(--kam-side) 46px;
-      background: transparent;
-      color: var(--kam-fv-ink);
+      padding: 48px var(--kam-side) 46px;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
+      align-items: flex-start;
+      background: transparent;
+      color: var(--kam-fv-ink);
     }
 
     #kam-lp .kam-fv-kicker {
-      margin-top: 2svh;
-      margin-bottom: 7svh;
+      margin: 0;
       color: var(--kam-fv-ink);
-      font-family: "Shippori Mincho", serif;
-      font-size: 15px;
-      font-weight: 400;
-      line-height: 1.7;
+      font-family: "BIZ UDPGothic", sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.55;
       letter-spacing: 0.08em;
     }
 
     #kam-lp .kam-fv-question {
-      max-width: 100%;
-      margin-bottom: 3.2svh;
+      max-width: 330px;
+      margin: 58px 0 0;
       color: var(--kam-fv-ink);
       font-family: "Shippori Mincho", serif;
-      font-size: 27px;
-      font-weight: 400;
+      font-size: 30px;
+      font-weight: 600;
       line-height: 1.55;
-      letter-spacing: 0.025em;
+      letter-spacing: 0.015em;
     }
 
-    /* 🔴 2026-09-30 修正：font-size を要件H（画面幅の78〜85%）に合わせ、width:82% を削除 */
     #kam-lp .kam-fv-title {
-      margin-bottom: 3.2svh;
+      width: auto;
+      margin: 30px 0 0;
       color: var(--kam-fv-ink);
       font-family: "Shippori Mincho", serif;
       font-size: clamp(63px, 19.8vw, 86px);
-      font-weight: 400;
+      font-weight: 600;
       line-height: 1.08;
       letter-spacing: 0.02em;
       white-space: nowrap;
     }
 
-    #kam-lp .kam-fv-proof {
-      color: var(--kam-fv-ink);
-      font-family: "BIZ UDPGothic", sans-serif;
-      font-size: 13px;
-      font-weight: 400;
-      line-height: 1.7;
-      letter-spacing: 0.055em;
-    }
-
-    /* 🔴 .kam-fv-photo は削除（2026-09-30 顔写真を外した） */
 
     /* ② 痛み */
     #kam-lp .kam-pain {
@@ -593,29 +594,8 @@
       background: var(--kam-bg);
     }
 
-    #kam-lp .kam-cta-link {
-      display: block;
-      width: 100%;
-      border: 0;
-      border-radius: 0;
-      background: var(--kam-cta);
-      color: var(--kam-ink);
-      font-family: "BIZ UDPGothic", sans-serif;
-      font-weight: 400;
-      line-height: 1.45;
-      letter-spacing: 0.02em;
-      text-align: center;
-      text-decoration: none;
-    }
 
-    #kam-lp .kam-cta-first {
-      padding: 52px var(--kam-side) 88px;
-    }
 
-    #kam-lp .kam-cta-first .kam-cta-link {
-      padding: 17px 12px;
-      font-size: 17px;
-    }
 
     /* ⑥ 受け取ったあと */
     #kam-lp .kam-after {
@@ -660,14 +640,7 @@
       margin-top: 34px;
     }
 
-    #kam-lp .kam-final-cta {
-      margin-top: 52px;
-    }
 
-    #kam-lp .kam-final-cta .kam-cta-link {
-      padding: 21px 12px;
-      font-size: 19px;
-    }
 
     /* フッター */
     #kam-lp .kam-footer {
@@ -794,14 +767,7 @@
       margin-top: 30px;
     }
 
-    #kam-lp .kam-final-cta {
-      margin-top: 46px;
-    }
 
-    #kam-lp .kam-final-cta .kam-cta-link {
-      padding: 21px 12px;
-      font-size: 19px;
-    }
 
     /* ── フッター CTA直後に別部品が始まる感じを弱める ── */
     #kam-lp .kam-footer {
@@ -910,6 +876,95 @@
       text-align: left;
     }
 
+    /* ═══ CTAボタン 2026-09-30 第24便 ═══
+       本人「ラインのボタンがダサすぎる」「角は無くした方がいい。まるっっこくしよう」
+       🔴 LINE緑#06C755 をやめた理由は「色相が51度ずれている」ではなく「地から浮かない」。
+          緑 vs 地#CBDCE2 = 1.60:1 ／ この海色 vs 地 = 6.76:1
+          ★目立つ＝周りと違う色 ではなく 周りとの明度差。緑は異物なのに目立ってもいなかった。
+       🔴 みお（転換率6.5%）は緑に白 2.26:1・角丸8px・影あり・LINEの語は0回。
+          形（角丸・影）は借りた。色は借りない＝みおの地は墨(明度7)なので緑が光る。
+          カミンチュの地は明度85なので同じ緑が沈む。
+       🔴 ここは一番後ろに置く。前に置くと第16便のブロックに負ける。 */
+    #kam-lp .kam-cta-wrap {
+      width: 100%;
+      background: var(--kam-bg);
+    }
+
+    #kam-lp .kam-cta-link {
+      position: relative;
+      display: flex;
+      width: 100%;
+      min-height: 64px;
+      padding: 17px 22px;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid rgba(18, 37, 43, 0.16);
+      border-radius: 999px;
+
+      background: var(--kam-cta);
+      color: var(--kam-cta-ink);
+
+      font-family: "BIZ UDPGothic", sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.45;
+      letter-spacing: 0.045em;
+      text-align: center;
+      text-decoration: none;
+
+      /* 明るい地に黒い影を落とすと灰色に濁る。ページの青墨で落とす */
+      box-shadow:
+        0 7px 18px rgba(18, 37, 43, 0.22),
+        0 2px 5px rgba(18, 37, 43, 0.14);
+
+      -webkit-tap-highlight-color: transparent;
+      transition:
+        transform 160ms ease,
+        box-shadow 160ms ease;
+    }
+
+    #kam-lp .kam-cta-link:active {
+      transform: translateY(2px);
+      box-shadow:
+        0 3px 9px rgba(18, 37, 43, 0.20),
+        0 1px 3px rgba(18, 37, 43, 0.12);
+    }
+
+    /* ⑤直後：選択肢として静かに提示。下にまだ⑥⑦と最終CTAがある */
+    #kam-lp .kam-cta-first {
+      padding: 52px var(--kam-side) 88px;
+    }
+
+    #kam-lp .kam-cta-first .kam-cta-link {
+      min-height: 64px;
+      font-size: 18px;
+      font-weight: 700;
+      box-shadow:
+        0 6px 16px rgba(18, 37, 43, 0.18),
+        0 2px 4px rgba(18, 37, 43, 0.12);
+    }
+
+    /* 最終：ページ最後の主操作
+       🔴 Astraの指定は margin: 48px var(--kam-side) 0 だったが、この要素は
+          左右の余白を既に持つ .kam-inner の中にある。二重になってボタンが
+          342px → 294px に縮むので、左右を外して margin-top だけにした。
+       🔴 padding-bottom:70px も外した。.kam-final が既に 72px 持っている。 */
+    #kam-lp .kam-final-cta {
+      margin-top: 48px;
+    }
+
+    #kam-lp .kam-final-cta .kam-cta-link {
+      min-height: 72px;
+      padding: 20px 22px;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      box-shadow:
+        0 9px 22px rgba(18, 37, 43, 0.24),
+        0 3px 7px rgba(18, 37, 43, 0.15);
+    }
+
     @media (max-width: 370px) {
       #kam-lp {
         font-size: 17px;
@@ -953,19 +1008,23 @@
   <main id="kam-lp">
 
     <section class="kam-section kam-fv">
+      <figure class="kam-fv-sea">
+        <img
+          src="img/s_fv_sea.jpg"
+          alt="宮古島の海">
+      </figure>
+
       <div class="kam-fv-copy">
         <p class="kam-fv-kicker">宮古島の御嶽より</p>
 
-        <h1 class="kam-fv-question">あの人のこと、<br>まだ諦めきれませんか</h1>
+        <h1 class="kam-fv-question">
+          あの人のこと、<br>
+          まだ諦めきれませんか
+        </h1>
 
         <p class="kam-fv-title">無料霊視</p>
 
-        <p class="kam-fv-proof">鑑定20,000件以上 ／ 四十年</p>
       </div>
-
-      <figure class="kam-fv-sea">
-        <img src="img/s_fv_sea.jpg" alt="宮古島の海">
-      </figure>
     </section>
 
     <section class="kam-section kam-pain">
