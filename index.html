@@ -1026,6 +1026,22 @@
       }
     }
   </style>
+<!-- Meta Pixel（2026-10-01 設置。みおと同じ形） -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1531535372326028');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1531535372326028&ev=PageView&noscript=1"
+/></noscript>
 </head>
 <body>
   <main id="kam-lp">
@@ -1635,10 +1651,14 @@
   <script>
     document.querySelectorAll('#kam-lp [data-kam-cta]').forEach(function (link) {
       link.addEventListener('click', function () {
+        var pos = this.getAttribute('data-kam-cta');
+        if (typeof fbq === 'function') {
+          fbq('track', 'Lead', { content_name: pos });
+        }
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           event: 'kam_cta_click',
-          kam_cta_position: this.getAttribute('data-kam-cta')
+          kam_cta_position: pos
         });
       });
     });
